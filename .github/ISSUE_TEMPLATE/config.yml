@@ -1,0 +1,20 @@
+# Forces everyone through one of the two forms instead of an empty text box.
+# Set this to true later if the forms turn out to get in people's way.
+blank_issues_enabled: false
+
+contact_links:
+  - name: Licensing, payments, invoices
+    url: https://ctrl32.com/contact
+    about: Anything touching your licence key or an order — please write privately, never in a public issue.
+
+  - name: Questions and help
+    url: https://ctrl32.com/forum
+    about: "\"How do I do X?\" belongs on the forum, where other users can answer too and the thread stays findable."
+
+  - name: Documentation
+    url: https://ctrl32.com/docs/
+    about: Wiring, register maps, limits, and the full block reference.
+
+  - name: Add a board to the catalogue
+    url: https://github.com/ctrl32/ctrl32-hardware
+    about: Your board missing? It is a pull request, not an issue.
