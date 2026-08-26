@@ -1,0 +1,97 @@
+name: Bug report
+description: Something in the editor or on the board does not behave the way it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. The three fields marked required below are
+        the ones that decide whether this can be reproduced — without them the
+        first reply is always going to be a question rather than a fix.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, and what the software did instead of what you expected.
+      placeholder: |
+        I deployed a project with three PID blocks over ethernet. The board
+        accepted the pack, but the second PID output stays at 0 even though
+        its input changes.
+    validations:
+      required: true
+
+  - type: input
+    id: editor-version
+    attributes:
+      label: Editor version
+      description: Help → About, the full version string.
+      placeholder: "1.00.031"
+    validations:
+      required: true
+
+  - type: input
+    id: runtime-version
+    attributes:
+      label: Runtime version on the board
+      description: Shown in the connection dialog once the board is found. Write "unknown" if you could not connect.
+      placeholder: "1.00.029"
+    validations:
+      required: true
+
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      description: The exact catalogue name, plus the display if one is attached.
+      placeholder: "Olimex ESP32-EVB + 2.8\" ILI9341"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce it
+      description: Numbered steps, starting from a new empty project if possible.
+      placeholder: |
+        1. New project, pick the board above
+        2. Add a PID block on rung 1
+        3. Deploy over USB
+        4. Watch the output in the monitor
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Does it happen every time?
+      options:
+        - Every time
+        - Most of the time
+        - Only occasionally
+        - It happened once and I cannot repeat it
+    validations:
+      required: true
+
+  - type: textarea
+    id: extras
+    attributes:
+      label: Project file, screenshots, logs
+      description: |
+        Drag files straight into this box to attach them. A project file makes
+        this far easier to reproduce.
+
+        **Check the project before attaching it** — it stores what you typed
+        into it, including Wi-Fi passwords, broker credentials and IP
+        addresses. Strip them or make a stripped-down copy that still shows
+        the problem.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send this
+      options:
+        - label: I searched the existing issues and this is not already reported
+          required: true
+        - label: There are no passwords or credentials in what I attached
+          required: true
