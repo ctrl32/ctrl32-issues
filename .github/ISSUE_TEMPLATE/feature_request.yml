@@ -1,0 +1,67 @@
+name: Feature request
+description: Something ctrl32 cannot do yet, and you need it to.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requests that describe a real job get built first. Requests that
+        describe a feature in the abstract usually sit for a long time — so
+        tell me what you are actually trying to build.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The machine, the panel, the job — not the feature yet.
+      placeholder: |
+        I build small filling machines. The customer wants to see the last
+        200 batches on the panel without connecting a PC.
+    validations:
+      required: true
+
+  - type: textarea
+    id: blocked
+    attributes:
+      label: What stops you today?
+      description: What you tried, and where it fell over.
+      placeholder: |
+        I can log to a variable array, but there is no way to show a scrolling
+        table on the HMI, and nothing keeps the data across a power cut.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would solve it?
+      description: Optional. If you have a concrete idea, describe it — but the two answers above matter more.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of ctrl32?
+      options:
+        - Editor (ladder, FBD, ST)
+        - HMI / WEBview
+        - Runtime on the board
+        - Fieldbus (Modbus, CANopen, raw CAN)
+        - MQTT and networking
+        - Hardware support
+        - Documentation
+        - Something else
+    validations:
+      required: true
+
+  - type: dropdown
+    id: context
+    attributes:
+      label: How are you using ctrl32?
+      description: This is only to weigh requests sensibly — nothing more.
+      options:
+        - Hobby / home automation
+        - I build machines for customers
+        - Teaching or training
+        - Evaluating it, not using it yet
+    validations:
+      required: true
